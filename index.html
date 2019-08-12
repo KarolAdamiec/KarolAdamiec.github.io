@@ -22,7 +22,7 @@ div {margin:4px; padding: 4px;}
 }
     function checkAnswer(number){
      
-      const answer = Number(number.target.textValue)
+      const answer = Number(number.target.textContent)
       console.log('got ',number,answer)
       const banner = document.getElementById("messageBanner");
       if(a+b === answer){
@@ -76,7 +76,7 @@ div {margin:4px; padding: 4px;}
     <div id="answer3" style="border: 2px solid blue"></div>
     <div id="answer4" style="border: 2px solid blue"></div>
   </div>
-  <div id="messageBanner" style="display: none">
+  <div id="messageBanner" style="display: none;font-size: 100px">
   </div>
   
   <button onClick="location.reload();">Again! :)</button>
