@@ -11,8 +11,12 @@ div {margin:4px; padding: 4px;}
       console.log('DOM fully loaded and parsed');
       makeQuiz()
 });
+    
+   
      let a,b;
   const getInteger = (min,max) => Math.floor(Math.random() * (max-min)+min);
+  const getHappy = () => getInteger(128512,128527)
+  const getSad = () => getInteger(128530,128566)
  function shuffle(array) {
   array.sort(() => Math.random() - 0.5);
 }
@@ -20,14 +24,14 @@ div {margin:4px; padding: 4px;}
      
       const answer = Number(number.target.textValue)
       console.log('got ',number,answer)
-      let banner;
+      const banner = document.getElementById("messageBanner");
       if(a+b === answer){
         //yes!
-        banner = document.getElementById("messageYesBanner");
+        banner.innerHtml = "<p>"+"&#" + getHappy() +";YESS!!!" + "&#" + getHappy() +";</p>"
       }
       else{
         //no! try again
-        banner = document.getElementById("messageNoBanner");
+        banner.innerHtml = "<p>"+"&#" + getSad() +";NOOOO!!!" + "&#" + getSad() +";</p>"
       }
       banner.style.display = 'block';
     }
@@ -72,13 +76,7 @@ div {margin:4px; padding: 4px;}
     <div id="answer3" style="border: 2px solid blue"></div>
     <div id="answer4" style="border: 2px solid blue"></div>
   </div>
-  <div id="messageYesBanner" style="display: none">
-    <p style="font-size:100px">&#128540;</p>
-    <p>That was cool, now try again.</p>
-  </div>
-  <div id="messageNoBanner" style="display: none"}>
-    <p style="font-size:100px">&#128542;</p>
-    <p>That was cool, now try again.</p>
+  <div id="messageBanner" style="display: none">
   </div>
   
   <button onClick="location.reload();">Again! :)</button>
