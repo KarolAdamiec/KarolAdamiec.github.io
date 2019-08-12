@@ -12,22 +12,30 @@ div {margin:4px; padding: 4px;}
       makeQuiz()
 });
   const getInteger = (min,max) => Math.floor(Math.random() * (max-min)+min);
+ function shuffle(array) {
+  array.sort(() => Math.random() - 0.5);
+}
     const makeQuiz = () => {
+      let a,b;
       const termA = document.getElementById("termA");
-      termA.textContent = getInteger(0,1000);
+      termA.textContent = a = getInteger(0,1000);
       const operand = document.getElementById("operand");
       operand.textContent = "+"
       const termB = document.getElementById("termB");
-      termB.textContent = getInteger(0,100);
+      termB.textContent = b = getInteger(0,100);
       
       const answer1 = document.getElementById("answer1");
-      answer1.textContent = getInteger(0,100);
+      answer1.textContent = getInteger(0,1000);
       const answer2 = document.getElementById("answer2");
-      answer2.textContent = getInteger(0,100);
+      answer2.textContent = getInteger(0,1000);
       const answer3 = document.getElementById("answer3");
-      answer3.textContent = getInteger(0,100);
+      answer3.textContent = getInteger(0,1000);
       const answer4 = document.getElementById("answer4");
-      answer4.textContent = getInteger(0,100);
+      answer4.textContent = getInteger(0,1000);
+      const drawFrom = ["answer1","answer2","answer3","answer4"]
+      shuffle(drawFrom);
+      const realAnswer = document.getElementById(drawFrom[0]);
+      realAnswer.textContent = a + b
     }
   </script>
 <title>Testy dla nikoli</title>
@@ -38,14 +46,13 @@ div {margin:4px; padding: 4px;}
     <div id="termA">999</div>
     <div id="operand">+</div>
     <div id="termB">12312</div>
-    <div id="Answers" style="display: flex;">
-      <div>=</div>
-      <div id="answer1"></div>
-      <div id="answer2"></div>
-      <div id="answer3"></div>
-      <div id="answer4"></div>
-    </div>
+    <div>=</div>
+    <div id="answer1" style="border: 2px solid blue"></div>
+    <div id="answer2" style="border: 2px solid blue"></div>
+    <div id="answer3" style="border: 2px solid blue"></div>
+    <div id="answer4" style="border: 2px solid blue"></div>
   </div>
+  
 </body>
 
 </html>
