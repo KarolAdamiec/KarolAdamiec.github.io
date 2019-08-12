@@ -2,11 +2,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
+  <script>
+  const getInteger = (min,max) => Math.floor(Math.random() * (max-min)+min);
+    const termA = document.getElementById("termA");
+    termA.text = getInteger(0,1000);
+    const operand = document.getElementById("operand");
+    termA.text = "+"
+    const termB = document.getElementById("termB");
+    termB.text = getInteger(0,100);
+  </script>
 <title>Testy dla nikoli</title>
 </head>
 
 <body>
-Content of the document......
+  <div>
+  <div id="termA"/>
+    <div id="operand"/>
+    <div id="termB"/>
+  <div id="Answers"/>
+  </div>
 </body>
 
 </html>
