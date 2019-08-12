@@ -27,11 +27,11 @@ div {margin:4px; padding: 4px;}
       const banner = document.getElementById("messageBanner");
       if(a+b === answer){
         //yes!
-        banner.innerHtml = "<p>"+"&#" + getHappy() +";YESS!!!" + "&#" + getHappy() +";</p>"
+        banner.innerHTML = "<p>"+"&#" + getHappy() +";YESS!!!" + "&#" + getHappy() +";</p>"
       }
       else{
         //no! try again
-        banner.innerHtml = "<p>"+"&#" + getSad() +";NOOOO!!!" + "&#" + getSad() +";</p>"
+        banner.innerHTML = "<p>"+"&#" + getSad() +";NOOOO!!!" + "&#" + getSad() +";</p>"
       }
       banner.style.display = 'block';
     }
