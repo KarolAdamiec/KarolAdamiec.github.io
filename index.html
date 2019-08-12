@@ -36,16 +36,16 @@ div {margin:4px; padding: 4px;}
       
       const answer1 = document.getElementById("answer1");
       answer1.textContent = getInteger(0,1000);
-      answer1.onClick = checkAnswer;
+      answer1.onclick = checkAnswer;
       const answer2 = document.getElementById("answer2");
       answer2.textContent = getInteger(0,1000);
-      answer2.onClick = checkAnswer;
+      answer2.onclick = checkAnswer;
       const answer3 = document.getElementById("answer3");
       answer3.textContent = getInteger(0,1000);
-      answer3.onClick = checkAnswer;
+      answer3.onclick = checkAnswer;
       const answer4 = document.getElementById("answer4");
       answer4.textContent = getInteger(0,1000);
-      answer4.onClick = checkAnswer;
+      answer4.onclick = checkAnswer;
       const drawFrom = ["answer1","answer2","answer3","answer4"]
       shuffle(drawFrom);
       const realAnswer = document.getElementById(drawFrom[0]);
