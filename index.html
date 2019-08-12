@@ -18,12 +18,17 @@ div {margin:4px; padding: 4px;}
 }
     function checkAnswer(number){
       console.log('asfdas',number)
-      if(a+b === number){
+      const answer = Number(number)
+      let banner;
+      if(a+b === answer){
         //yes!
+        banner = document.getElementById("messageYesBanner");
       }
       else{
         //no! try again
+        banner = document.getElementById("messageNoBanner");
       }
+      banner.style.display = 'block';
     }
     const makeQuiz = () => {
      
@@ -68,9 +73,11 @@ div {margin:4px; padding: 4px;}
   </div>
   <div id="messageYesBanner" style="display: none">
     <p style="font-size:100px">&#128540;</p>
+    <p>That was cool, now try again.</p>
   </div>
   <div id="messageNoBanner" style="display: none"}>
     <p style="font-size:100px">&#128542;</p>
+    <p>That was cool, now try again.</p>
   </div>
   
   <button onClick="location.reload();">Again! :)</button>
