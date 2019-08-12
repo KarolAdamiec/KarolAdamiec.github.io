@@ -3,13 +3,19 @@
 <head>
 <meta charset="UTF-8">
   <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      console.log('DOM fully loaded and parsed');
+      makeQuiz()
+});
   const getInteger = (min,max) => Math.floor(Math.random() * (max-min)+min);
-    const termA = document.getElementById("termA");
-    termA.textContent = getInteger(0,1000);
-    const operand = document.getElementById("operand");
-    termA.textContent = "+"
-    const termB = document.getElementById("termB");
-    termB.textContent = getInteger(0,100);
+    const makeQuiz = () => {
+      const termA = document.getElementById("termA");
+      termA.textContent = getInteger(0,1000);
+      const operand = document.getElementById("operand");
+      termA.textContent = "+"
+      const termB = document.getElementById("termB");
+      termB.textContent = getInteger(0,100);
+    }
   </script>
 <title>Testy dla nikoli</title>
 </head>
