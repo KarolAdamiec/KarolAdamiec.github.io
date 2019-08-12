@@ -17,6 +17,7 @@ div {margin:4px; padding: 4px;}
   array.sort(() => Math.random() - 0.5);
 }
     function checkAnswer(number){
+      console.log('asfdas',number)
       if(a+b === number){
         //yes!
       }
@@ -35,12 +36,16 @@ div {margin:4px; padding: 4px;}
       
       const answer1 = document.getElementById("answer1");
       answer1.textContent = getInteger(0,1000);
+      answer1.onClick = checkAnswer;
       const answer2 = document.getElementById("answer2");
       answer2.textContent = getInteger(0,1000);
+      answer2.onClick = checkAnswer;
       const answer3 = document.getElementById("answer3");
       answer3.textContent = getInteger(0,1000);
+      answer3.onClick = checkAnswer;
       const answer4 = document.getElementById("answer4");
       answer4.textContent = getInteger(0,1000);
+      answer4.onClick = checkAnswer;
       const drawFrom = ["answer1","answer2","answer3","answer4"]
       shuffle(drawFrom);
       const realAnswer = document.getElementById(drawFrom[0]);
@@ -61,14 +66,14 @@ div {margin:4px; padding: 4px;}
     <div id="answer3" style="border: 2px solid blue"></div>
     <div id="answer4" style="border: 2px solid blue"></div>
   </div>
-  <div id="messageYesBanner" style={display: none}>
+  <div id="messageYesBanner" style="display: none">
     <p style="font-size:100px">&#128540;</p>
   </div>
-  <div id="messageNoBanner" style={display: none}>
+  <div id="messageNoBanner" style="display: none"}>
     <p style="font-size:100px">&#128542;</p>
   </div>
   
-  <button onClick="()=> location.reload()">Again! :)</button>
+  <button onClick="() => location.reload()">Again! :)</button>
   
 </body>
 
