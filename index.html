@@ -11,12 +11,21 @@ div {margin:4px; padding: 4px;}
       console.log('DOM fully loaded and parsed');
       makeQuiz()
 });
+     let a,b;
   const getInteger = (min,max) => Math.floor(Math.random() * (max-min)+min);
  function shuffle(array) {
   array.sort(() => Math.random() - 0.5);
 }
+    function checkAnswer(number){
+      if(a+b === number){
+        //yes!
+      }
+      else{
+        //no! try again
+      }
+    }
     const makeQuiz = () => {
-      let a,b;
+     
       const termA = document.getElementById("termA");
       termA.textContent = a = getInteger(0,1000);
       const operand = document.getElementById("operand");
@@ -52,6 +61,14 @@ div {margin:4px; padding: 4px;}
     <div id="answer3" style="border: 2px solid blue"></div>
     <div id="answer4" style="border: 2px solid blue"></div>
   </div>
+  <div id="messageYesBanner" style={display: none}>
+    <p style="font-size:100px">&#128540;</p>
+  </div>
+  <div id="messageNoBanner" style={display: none}>
+    <p style="font-size:100px">&#128542;</p>
+  </div>
+  
+  <button onClick="()=> location.reload()">Again! :)</button>
   
 </body>
 
