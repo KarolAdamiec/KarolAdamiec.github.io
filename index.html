@@ -17,8 +17,9 @@ div {margin:4px; padding: 4px;}
   array.sort(() => Math.random() - 0.5);
 }
     function checkAnswer(number){
-      console.log('asfdas',number)
-      const answer = Number(number)
+     
+      const answer = Number(number.target.textValue)
+      console.log('got ',answer)
       let banner;
       if(a+b === answer){
         //yes!
